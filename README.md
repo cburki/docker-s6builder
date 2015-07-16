@@ -40,7 +40,7 @@ The results of the build (binaries, libraries, etc) could then be found in *s6di
 Using s6 to start services
 --------------------------
 
-The s6 main init-like program is *s6-svscan*. When launched, it will parse a directory a launch *s6-supervisor* on each *service directories* it found. Here is a sample of my directory tree for a ssh server container.
+The s6 main init-like program is *s6-svscan*. When launched, it will parse a directory a launch *s6-supervise* on each *service directories* it found. Here is a sample of my directory tree for a ssh server container.
 
     etc
     └── s6
@@ -52,7 +52,7 @@ The s6 main init-like program is *s6-svscan*. When launched, it will parse a dir
 
 */etc/s6* is the root s6 directory where sshd is a *service directory*. The *.s6-svscan* is not a service directory, that's the directory used by *s6-svscan*.
 
-Each *service directory* has two files, run and finish. The *s6-supervisor* program will call the run program, and when the run program exits, it will call the finish program. Here is my run program for sshd service.
+Each *service directory* has two files, run and finish. The *s6-supervise* program will call the run program, and when the run program exits, it will call the finish program. Here is my run program for sshd service.
 
     #!/bin/bash
     
